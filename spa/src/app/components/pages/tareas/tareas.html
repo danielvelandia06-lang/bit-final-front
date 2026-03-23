@@ -1,0 +1,5 @@
+<ul>
+  @for (tarea of tareas; track tarea._id) {
+    <li>{{ tarea.titulo }}: {{ tarea.completada }}</li>
+  }
+</ul>
