@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+/* 1. RESET Y CONFIGURACIÓN BASE */
+/* Eliminamos los márgenes por defecto del navegador y forzamos el 100% de altura */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a; /* Tu color oscuro de fondo */
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden; /* Evita scrolls horizontales accidentales */
+}
+
+/* 2. EL CONTENEDOR RAÍZ DE ANGULAR */
+/* Por defecto, <app-root> no tiene altura. Aquí lo obligamos a ser un contenedor Flex */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa el 100% de la ventana del navegador */
+  width: 100%;
+}
+
+/* 3. ESTRUCTURA DE LA APLICACIÓN */
+/* Este selector asume que en app.component.html usas <main> o una clase .main-content */
+main,
+.main-content {
+  flex: 1; /* ¡ESTA ES LA MAGIA! Hace que el contenido crezca y empuje el footer al fondo */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0; /* Espaciado interno opcional */
+}
+
+/* 4. TIPOGRAFÍA PARA EL LOGO */
+/* Importa esta fuente en tu index.html para que el logo se vea elegante */
+.dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* 5. UTILIDADES PARA MODO OSCURO (DARK MODE) */
+/* Si tu Header activa la clase 'dark-mode' en el body */
+body.dark-mode {
+  background-color: #0d0d0d;
+}
+
+/* 6. SCROLLBAR ESTILIZADO (Opcional, para que combine con tu diseño) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8d0eb;
+}

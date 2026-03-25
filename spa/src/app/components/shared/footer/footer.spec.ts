@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Footer } from './footer';
 
 describe('Footer', () => {
@@ -13,7 +12,7 @@ describe('Footer', () => {
 
     fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges(); // Procesa los bindings iniciales
   });
 
   it('should create', () => {

@@ -2,12 +2,21 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Spa</title>
+    <title>bloc de notas</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/webp" href="Notepad_22553.webp" />
   </head>
   <body>
+    <header>
+      <app-header></app-header>
+    </header>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <app-footer></app-footer>
     <app-root></app-root>
   </body>
 </html>

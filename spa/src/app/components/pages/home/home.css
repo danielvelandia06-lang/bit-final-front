@@ -1,0 +1,104 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 0 5%;
+  gap: 50px;
+}
+
+/* Columna Imagen */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img {
+  max-width: 450px;
+  width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Columna Texto */
+.home-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.welcome-card {
+  background-color: #2a2a2a;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.welcome-text {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Botón Estilo Azul Claro */
+.btn-primary {
+  background-color: #b8d0eb;
+  color: #1a1a1a;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* Ajuste para tablets y móviles */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .home-image,
+  .home-content {
+    justify-content: center;
+  }
+}
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centra la foto en su columna */
+  align-items: center;
+}
+
+.hero-img {
+  max-width: 500px; /* Ajusta este tamaño según prefieras */
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Le da un toque suave a los bordes */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Sombra para que flote */
+  object-fit: cover;
+}

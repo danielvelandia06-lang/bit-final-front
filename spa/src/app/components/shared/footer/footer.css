@@ -1,0 +1,94 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #a0a0a0;
+  padding: 50px 0 20px;
+  border-top: 1px solid #333;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.5fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  font-family: 'Dancing Script', cursive;
+  color: #b8d0eb;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-links h3 {
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #252525;
+  font-size: 0.75rem;
+}
+.footer-social h3 {
+  color: #b8d0eb;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  gap: 20px; /* ¡ESTA ES LA CLAVE! Crea espacio igual entre iconos */
+  justify-content: flex-start;
+}
+
+.social-btn {
+  text-decoration: none;
+  font-size: 1.5rem; /* Iconos más grandes y legibles */
+  background: rgba(255, 255, 255, 0.05); /* Un círculo sutil de fondo */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: #b8d0eb; /* Color de tu marca al pasar el mouse */
+  transform: translateY(-5px); /* Pequeño salto animado */
+  filter: grayscale(0);
+}
+
+/* Ajuste general del contenedor para que no se pegue a los bordes */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,83 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* USO DE FLEX: 1
+   Los controles y el espaciador tienen el mismo peso (flex: 1).
+   Esto obliga al logo (que está en medio) a quedar perfectamente centrado.
+*/
+.header-controls,
+.header-spacer {
+  flex: 1;
+}
+
+.header-logo {
+  flex: 2; /* Le damos más espacio al logo para que no se amontone */
+  text-align: center;
+}
+
+/* --- ESTILO DE BOTONES A+, A- y LUNA --- */
+.header-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-circle {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #3d3d3d;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-circle span {
+  font-size: 1.1rem;
+  margin-left: 1px;
+}
+
+.btn-circle:hover {
+  background-color: #b8d0eb;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(184, 208, 235, 0.3);
+  border-color: #b8d0eb;
+}
+
+/* --- LOGO --- */
+.logo-text {
+  font-family: 'Dancing Script', cursive;
+  color: #b8d0eb;
+  font-size: 2.8rem; /* Un poco más grande para resaltar */
+  margin: 0;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .header-spacer {
+    display: none; /* En móvil no necesitamos el equilibrio */
+  }
+}

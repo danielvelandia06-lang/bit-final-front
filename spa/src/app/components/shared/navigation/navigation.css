@@ -1,5 +1,46 @@
-nav {
+.nav-container {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px; /* Espaciado entre inicio y tareas */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #a0a0a0; /* Gris para el estado inactivo */
+  font-size: 1rem;
+  font-weight: 400;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* El estilo que se aplica cuando estamos en la página */
+.nav-link.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* La rayita blanca debajo del texto activo */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
 }

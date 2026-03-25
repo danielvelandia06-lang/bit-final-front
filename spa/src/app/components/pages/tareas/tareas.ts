@@ -1,20 +1,33 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Tareasservice } from '../../../services/tareas';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Tareasservice } from '../../../services/tareas'; // Ruta corregida
 
 @Component({
   selector: 'app-tareas',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './tareas.html',
   styleUrl: './tareas.css',
 })
 export class Tareas implements OnInit {
-  private tareaservice = inject(Tareasservice);
-  tareas: any[] = [];
+  private api = inject(Tareasservice);
+  private cdr = inject(ChangeDetectorRef);
+  misTareas: any[] = [];
 
   ngOnInit(): void {
-    this.tareaservice.getAllTareas().subscribe((res: any) => {
-      this.tareas = res.data;
-      console.log('tareas:', this.tareas);
+    this.obtenerDatos();
+  }
+
+  obtenerDatos() {
+    this.api.getAllTareas().subscribe({
+      next: (res: any) => {
+        this.misTareas = res.tareas || res.data || (Array.isArray(res) ? res : []);
+
+        // ESTO ES CLAVE: Mira la consola (F12) y abre el primer objeto { } que aparezca
+        console.log('Estructura de una tarea:', this.misTareas[0]);
+
+        this.cdr.detectChanges();
+      },
     });
   }
 }

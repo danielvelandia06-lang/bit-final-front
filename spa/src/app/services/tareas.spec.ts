@@ -1,13 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; // Necesario para tests con API
+import { Tareasservice } from './tareas'; // Cambiado de Tareas a Tareasservice
 
-import { Tareas } from './tareas';
-
-describe('Tareas', () => {
-  let service: Tareas;
+describe('Tareasservice', () => {
+  let service: Tareasservice;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Tareas);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule], // Importamos esto para que no falle al pedir HttpClient
+      providers: [Tareasservice],
+    });
+    service = TestBed.inject(Tareasservice);
   });
 
   it('should be created', () => {

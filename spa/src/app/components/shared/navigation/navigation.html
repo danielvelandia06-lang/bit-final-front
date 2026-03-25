@@ -1,4 +1,16 @@
-<nav>
-  <a routerLink="/inicio">inicio</a>
-  <a routerLink="/tareas">tareas</a>
+<nav class="nav-container">
+  <ul class="nav-list">
+    <li>
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        >inicio</a
+      >
+    </li>
+    <li>
+      <a routerLink="/tareas" routerLinkActive="active" class="nav-link">tareas</a>
+    </li>
+  </ul>
 </nav>

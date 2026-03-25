@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="header-container">
+  <div class="header-controls">
+    <button class="btn-circle" (click)="changeFontSize('increase')" title="Aumentar texto">
+      A<span>+</span>
+    </button>
+    <button class="btn-circle" (click)="changeFontSize('decrease')" title="Disminuir texto">
+      A<span>-</span>
+    </button>
+    <button class="btn-circle btn-theme" (click)="toggleDarkMode()" title="Modo Oscuro">
+      <span class="icon">🌙</span>
+    </button>
+  </div>
+
+  <div class="header-logo">
+    <h1 class="logo-text">blog de notas</h1>
+  </div>
+
+  <div class="header-spacer"></div>
+</header>

@@ -1,5 +1,41 @@
-<ul>
-  @for (tarea of tareas; track tarea._id) {
-    <li>{{ tarea.titulo }}: {{ tarea.completada }}</li>
-  }
-</ul>
+<section class="tareas-container">
+  <h2 class="section-title">registros en base de datos</h2>
+
+  <div class="table-wrapper">
+    <table class="tareas-table">
+      <thead>
+        <tr>
+          <th>tarea</th>
+          <th>prioridad</th>
+          <th>completada</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of misTareas; track $index) {
+          <tr>
+            <td>{{ item.titulo || item.tarea || item.name }}</td>
+
+            <td class="prioridad-tag">{{ item.prioridad }}</td>
+
+            <td>
+              <span
+                [class.status-true]="item.completada === 'true' || item.completada === true"
+                [class.status-false]="item.completada === 'false' || item.completada === false"
+              >
+                {{
+                  item.completada === 'true' || item.completada === true
+                    ? 'completado'
+                    : 'pendiente'
+                }}
+              </span>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="3" class="loading-text">No se encontraron registros...</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

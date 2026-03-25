@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+export class Home {
+  constructor(private router: Router) {}
+
+  // Función para el botón de acción
+  goToTasks() {
+    this.router.navigate(['/tareas']);
+  }
+}
